@@ -1,0 +1,150 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimeLineElement from "../components/cv/TimeLine.astro";
+---
+
+<BaseLayout title="Resume" sideBarActiveItemID="cv">
+  <div class="grid grid-cols-2 items-center justify-around mb-5">
+    <div class="text-3xl w-full font-bold">Profile</div>
+    <a class="btn" href="./JuniperoVerbeke.pdf" target="_blank"
+      >Download CV<svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        viewBox="0 0 32 32"
+      >
+        <path
+          fill="currentColor"
+          d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4zm0-10l-1.41-1.41L17 20.17V2h-2v18.17l-7.59-7.58L6 14l10 10z"
+        ></path>
+      </svg></a
+    >
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">🎓Education</div>
+  </div>
+
+  <div class="time-line-container grid gap-4 mb-10">
+    <TimeLineElement
+      title="University of California, Santa Cruz"
+      subtitle="B.S. Applied Physics - Computational Concentration"
+      date="September 2023 - Present"
+    />
+    <TimeLineElement
+      title="Mission-West Valley Community College - Santa Clara, CA"
+      subtitle="Engineering"
+      date="September 2021 - June 2023"
+    />
+    <TimeLineElement
+      title="Étoile du Matin - Eguelshardt, France"
+      subtitle="High School"
+      date="September 2017 - June 2020"
+    />
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">📝Coursework</div>
+  </div>
+
+  <ul class="list-disc md:columns-4 columns-2 mx-6 mb-10">
+    <li>Linear Algebra</li>
+    <li>Vector Calculus</li>
+    <li>Differential Equations</li>
+    <li>Statistical Mechanics</li>
+    <li>Thermodynamics</li>
+    <li>Quantum Mechanics</li>
+    <li>Thermodynamics</li>
+    <li>Classical Mechanics</li>
+    <li>Obect-Oriented Programming</li>
+  </ul>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">🛠️Skills</div>
+  </div>
+
+  <ul class="list-disc md:columns-5 columns-2 mx-6 mb-10">
+    <li>Python</li>
+    <li>JavaScript</li>
+    <li>MATLAB</li>
+    <li>HTML5/CSS3</li>
+    <li>LaTex</li>
+    <li>Git/GitHub</li>
+    <li>Unix Shell</li>
+    <li>VS Code</li>
+    <li>AutoCAD</li>
+    <li>Fusion 360</li>
+    <li>Visio</li>
+    <li>SketchUp</li>
+    <li>Astro</li>
+    <li>NumPy</li>
+    <li>Matplotlib</li>
+  </ul>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">⏳Experience</div>
+  </div>
+
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+      title="Veritas Managed Solutions, Inc."
+      date="June 2021 - Present"
+      subtitle="Project Engineering"
+    >
+      <ul class="list-disc list-inside mb-2">
+        <li>
+          3 years experience as an applied engineer, planning and estimating 80+
+          projects
+        </li>
+        <li>
+          Led the creation of the engineering team, creating 5 universal guides
+          on implementing our systems for technicians
+        </li>
+        <li>
+          Certified in Bosch intrusion and Gallagher access control systems
+        </li>
+        <li>
+          Experience in Axis, Hanwha, Hikvision, Bosch and Honeywell security
+          programming and systems
+        </li>
+        <li>Experience in Brightsign display programming</li>
+        <li>
+          Experience in LEA, Sonance, Kramer, Logitech, and Biamp audio-visual
+          systems
+        </li>
+        <li>
+          Field experience with all above systems as well as network cabling
+        </li>
+      </ul>
+    </TimeLineElement>
+    <TimeLineElement
+      title="St. Thomas More School"
+      date="September 2022 - Present"
+      subtitle="Volunteer Network Maintenance"
+    >
+      Maintenance of St. Thomas More School’s computer lab and 8 media rooms,
+      also managing Sunday mass streams
+    </TimeLineElement>
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">✨Hobbies</div>
+  </div>
+
+  <ul class="list-disc mx-6 mb-10 grid gap-2">
+    <li>
+      <a href="https://rotorbuilds.com/profile/15079" target="_blank">
+        FPV drones/DIY electronics -<span class="font-light italic"></span>
+        Built and race three custom FPV drones, experienced in PID tuning and electronics
+        soldering and assembly</a
+      >
+    </li>
+    <li>
+      <a href="https://unsplash.com/@_tou" target="_blank">
+        Photography/Video editing -<span class="font-light italic"></span>
+        Regularly use Adobe Photoshop, Premiere Pro and Lightroom to edit pictures
+        and videos of rock climbing, overlanding and surfing trips</a
+      >
+    </li>
+  </ul>
+</BaseLayout>
