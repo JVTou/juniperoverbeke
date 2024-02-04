@@ -4,23 +4,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout sideBarActiveItemID="home">
+  <Background />
   <div class="min-h-[80vh]"></div>
   <div
     class="absolute right-0 top-0 bottom-0 left-0 m-auto lg:left-[25rem] z-10 lg:mr-auto lg:ml-0 w-[300px] h-[500px] lg:w-[600px] lg:pb-12 lg:mt-10"
   >
-    <div class="text-lg lg:text-xl py-1">Hey there 👋</div>
-    <div class="text-3xl lg:text-5xl font-bold">I'm Junipero Verbeke</div>
-    <div class="text-xl lg:text-3xl py-3 font-bold">
-      Student in Computational Physics
-    </div>
-    <div class="py-2">
-      <text class="lg:text-lg text-justify">
-        I am a college student majoring in computational physics at UCSC,
-        working as an applied engineer at Veritas Managed Solutions, Inc. My
-        interests are in data analysis, quantitative finance, machine learning
-        and mathematical models. Always looking forward to helping the growth of
-        the teams I am associated with.
-      </text>
+    <div class="pointer-events-none">
+      <div class="text-lg lg:text-xl py-1">Hey there 👋</div>
+      <div class="text-3xl lg:text-5xl font-bold">I'm Junipero Verbeke</div>
+      <div class="text-xl lg:text-3xl py-3 font-bold">
+        Student in Computational Physics
+      </div>
+      <div class="py-2">
+        <text class="lg:text-lg text-justify">
+          I am a college student majoring in computational physics at UCSC,
+          working as an applied engineer at Veritas Managed Solutions, Inc. My
+          interests are in data analysis, quantitative finance, machine learning
+          and mathematical models. Always looking forward to helping the growth
+          of the teams I am associated with.
+        </text>
+      </div>
     </div>
     <div class="mt-8">
       <a class="btn" href="/resume" target="_blank">See my resume</a>
@@ -33,5 +36,4 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       >
     </div>
   </div>
-  <Background />
 </BaseLayout>
