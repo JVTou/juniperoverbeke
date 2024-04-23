@@ -1,0 +1,35 @@
+---
+import Background from "@components/Background.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Contact" sideBarActiveItemID="contact">
+  <div class="min-h-[75vh]"></div>
+  <Background />
+  <div class="pointer-events-none">
+    <div
+      class="absolute right-0 -top-40 bottom-0 left-0 m-auto lg:left-[25rem] z-10 lg:mr-auto lg:ml-0 w-[300px] h-[400px] lg:w-[600px] lg:mt-10 lg:top-0 pointer-events-auto"
+    >
+      <h1 class="text-3xl lg:text-5xl w-full font-bold py-8">Contact Me</h1>
+      <form action="https://formspree.io/f/xoqgypwv" method="POST">
+        <div class="flex flex-col gap-3">
+          <label>
+            <input
+              type="email"
+              name="email"
+              class="input input-bordered input-primary w-full max-w-xs"
+              placeholder="Your email"
+            />
+          </label>
+          <label>
+            <textarea
+              name="message"
+              class="textarea textarea-primary w-full"
+              placeholder="Your message"></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</BaseLayout>
