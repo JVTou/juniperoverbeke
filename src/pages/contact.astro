@@ -4,14 +4,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Contact" sideBarActiveItemID="contact">
-  <script
-    type="text/javascript"
-    src="https://opnform.com/widgets/iframeResize.min.js"></script>
-  <iframe
-    style="border:none;width:100%;"
-    id="form-contact-me-ufruek"
-    src="https://opnform.com/forms/contact-me-ufruek"></iframe>
-  <script type="text/javascript">
-    iFrameResize({ log: false, checkOrigin: false }, "#form-contact-me-ufruek");
-  </script>
+  <div class="min-h-[75vh]"></div>
+  <Background />
+  <div class="pointer-events-none">
+    <div
+      class="absolute right-0 -top-40 bottom-0 left-0 m-auto lg:left-[25rem] z-10 lg:mr-auto lg:ml-0 w-[300px] h-[450px] lg:w-[600px] lg:mt-10 lg:top-0 pointer-events-auto"
+    >
+      <script
+        type="text/javascript"
+        src="https://opnform.com/widgets/iframeResize.min.js"></script>
+      <iframe
+        style="border:none;width:100%;"
+        id="form-contact-me-ufruek"
+        src="https://opnform.com/forms/contact-me-ufruek"></iframe>
+      <script type="text/javascript">
+        iFrameResize(
+          { log: false, checkOrigin: false },
+          "#form-contact-me-ufruek"
+        );
+      </script>
+    </div>
+  </div>
 </BaseLayout>
