@@ -8,39 +8,37 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <Background />
   <div class="pointer-events-none">
     <div
-      class="absolute right-0 -top-40 bottom-0 left-0 m-auto lg:left-[25rem] z-10 lg:mr-auto lg:ml-0 w-[300px] min-h-[450px] lg:w-[600px] lg:mt-10 lg:top-0"
+      class="absolute right-0 top-20 bottom-0 left-0 m-auto lg:left-[25rem] z-10 lg:mr-auto lg:ml-0 w-[300px] min-h-[450px] lg:w-[600px] lg:mt-10 lg:top-0"
     >
-      <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-        <h2
-          class="mb-4 text-4xl tracking-tight font-extrabold text-center text-white"
+      <h2
+        class="mb-4 text-4xl tracking-tight font-extrabold text-center text-white"
+      >
+        Contact Me
+      </h2>
+      <form name="Contact Form" class="space-y-8" method="post" netlify>
+        <label class="form-control w-full max-w-xs">
+          <div class="label">
+            <span class="label-text text-white">Your email:</span>
+          </div>
+          <input
+            type="text"
+            name="email"
+            placeholder="name@email.com"
+            class="input input-bordered input-primary w-full max-w-xs pointer-events-auto"
+          />
+        </label>
+        <label class="form-control">
+          <textarea
+            name="Message"
+            class="textarea textarea-primary h-24 pointer-events-auto"
+            placeholder="Type your message"></textarea>
+        </label>
+        <button
+          type="submit"
+          class="btn btn-primary btn-wide text-white pointer-events-auto"
+          >Send message</button
         >
-          Contact Me
-        </h2>
-        <form name="Contact Form" class="space-y-8" method="post" netlify>
-          <label class="form-control w-full max-w-xs">
-            <div class="label">
-              <span class="label-text text-white">Your email:</span>
-            </div>
-            <input
-              type="text"
-              name="email"
-              placeholder="name@email.com"
-              class="input input-bordered input-primary w-full max-w-xs pointer-events-auto"
-            />
-          </label>
-          <label class="form-control">
-            <textarea
-              name="Message"
-              class="textarea textarea-primary h-24 pointer-events-auto"
-              placeholder="Type your message"></textarea>
-          </label>
-          <button
-            type="submit"
-            class="btn btn-primary btn-wide text-white pointer-events-auto"
-            >Send message</button
-          >
-        </form>
-      </div>
+      </form>
     </div>
   </div>
 </BaseLayout>
