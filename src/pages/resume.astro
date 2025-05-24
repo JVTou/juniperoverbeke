@@ -6,8 +6,8 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
 <BaseLayout title="Resume" sideBarActiveItemID="cv">
   <div class="grid grid-cols-2 items-center justify-around mb-5">
     <div class="text-3xl w-full font-bold">Profile</div>
-    <a class="btn" href="./JuniperoVerbeke.pdf" target="_blank"
-      >Download CV<svg
+    <a class="btn btn-secondary" href="/JuniperoVerbeke.pdf" target="_blank">
+      Download CV<svg
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
         height="1em"
@@ -17,8 +17,8 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
           fill="currentColor"
           d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4zm0-10l-1.41-1.41L17 20.17V2h-2v18.17l-7.59-7.58L6 14l10 10z"
         ></path>
-      </svg></a
-    >
+      </svg>
+    </a>
   </div>
 
   <div class="mb-5">
@@ -27,18 +27,23 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
 
   <div class="time-line-container grid gap-4 mb-10">
     <TimeLineElement
+      title="San Jose State University"
+      subtitle="M.S. Aerospace Engineering"
+      date="In progress - June 2027"
+    />
+    <TimeLineElement
       title="University of California, Santa Cruz"
-      subtitle="B.S. Applied Physics - Computational Concentration"
-      date="September 2023 - Present"
+      subtitle="B.S. Applied Physics"
+      date="September 2023 - June 2025"
     />
     <TimeLineElement
       title="Mission-West Valley Community College - Santa Clara, CA"
       subtitle="Engineering"
-      date="September 2021 - June 2023"
+      date="September 2020 - June 2023"
     />
     <TimeLineElement
       title="Étoile du Matin - Eguelshardt, France"
-      subtitle="High School"
+      subtitle="High School - French Baccalaureate Mention très bien"
       date="September 2017 - June 2020"
     />
   </div>
@@ -48,14 +53,16 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
   </div>
 
   <ul class="list-disc md:columns-4 columns-2 mx-6 mb-10">
+    <li>Advanced Classical Mechanics</li>
     <li>Linear Algebra</li>
     <li>Vector Calculus</li>
     <li>Differential Equations</li>
     <li>Statistical Mechanics</li>
     <li>Thermodynamics</li>
-    <li>Quantum Mechanics</li>
-    <li>Classical Mechanics</li>
-    <li>Obect-Oriented Programming</li>
+    <li>Quantum Physics</li>
+    <li>Object-Oriented Programming</li>
+    <li>Feedback Control Systems</li>
+    <li>Electromagnetics</li>
   </ul>
 
   <div class="mb-5">
@@ -64,56 +71,65 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
 
   <ul class="list-disc md:columns-5 columns-2 mx-6 mb-10">
     <li>Python</li>
-    <li>JavaScript</li>
     <li>MATLAB</li>
+    <li>Simulink</li>
+    <li>JavaScript</li>
     <li>HTML5/CSS3</li>
-    <li>LaTex</li>
+    <li>LaTeX</li>
     <li>Git/GitHub</li>
     <li>Unix Shell</li>
     <li>VS Code</li>
     <li>AutoCAD</li>
     <li>Fusion 360</li>
-    <li>Visio</li>
-    <li>SketchUp</li>
+    <li>XFLR5</li>
+    <li>Blender</li>
     <li>Astro</li>
+    <li>React</li>
     <li>NumPy</li>
     <li>Matplotlib</li>
+    <li>R</li>
+    <li>Optical System Design & Alignment</li>
+    <li>Spectroscopy</li>
+    <li>Interferometry</li>
+    <li>Radiation Detection</li>
+    <li>Numerical Methods (RK4, Euler)</li>
+    <li>Data Acquisition</li>
+    <li>Error Analysis</li>
+    <li>Thermodynamics</li>
+    <li>Fluid Dynamics</li>
+    <li>Heat Transfer</li>
+    <li>Classical Mechanics</li>
+    <li>3D Printing (GCODE)</li>
+    <li>CNC</li>
   </ul>
 
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">⏳Experience</div>
   </div>
 
-  <div class="time-line-container mb-10">
+  <div class="time-line-container grid gap-4 mb-10">
     <TimeLineElement
       title="Veritas Managed Solutions, Inc."
       date="June 2021 - Present"
-      subtitle="Project Engineering"
+      subtitle="Applied Engineer"
     >
-      <ul class="list-disc list-inside mb-2">
+      <ul class="list-disc list-inside space-y-1">
         <li>
-          3 years experience as an applied engineer, planning and estimating 80+
-          projects
+          Planned and estimated 80+ security projects, including Tesla
+          Gigafactories Sparks and Austin.
         </li>
         <li>
-          Led the creation of the engineering team, creating 5 universal guides
-          on implementing our systems for technicians
+          Spearheaded the formation of the engineering team, contributing to
+          revenue growth from $10M to $28M in the security sector.
         </li>
         <li>
-          Certified in Bosch intrusion and Gallagher access control systems
+          Authored 5 universal guides for technician system implementation.
         </li>
         <li>
-          Experience in Axis, Hanwha, Hikvision, Bosch and Honeywell security
-          programming and systems
+          Worked on security floor plans using AutoCAD and in-house tools.
         </li>
-        <li>Experience in Brightsign display programming</li>
-        <li>
-          Experience in LEA, Sonance, Kramer, Logitech, and Biamp audio-visual
-          systems
-        </li>
-        <li>
-          Field experience with all above systems as well as network cabling
-        </li>
+        <li>Created 3D animations in Blender for publicity.</li>
+        {/* Add other points from resume if desired */}
       </ul>
     </TimeLineElement>
     <TimeLineElement
@@ -121,8 +137,194 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
       date="September 2022 - Present"
       subtitle="Volunteer Network Maintenance"
     >
-      Maintenance of St. Thomas More School’s computer lab and 8 media rooms,
-      also managing Sunday mass streams
+      <ul class="list-disc list-inside space-y-1">
+        <li>
+          Maintained computer lab, media rooms, and managed Sunday mass streams.
+        </li>
+        <li>
+          Filmed and photographed events; edited using DaVinci Resolve, Adobe
+          Premiere Pro, and Photoshop.
+        </li>
+      </ul>
+    </TimeLineElement>
+    <TimeLineElement
+      title="Custom Mechatronic Systems Design & Fabrication"
+      date="June 2020 - Present"
+      subtitle="Personal Business; CAD, Controls"
+    >
+      <ul class="list-disc list-inside space-y-1">
+        <li>
+          Designed, modeled (Blender, Fusion360), and fabricated custom
+          mechanical components using 3D printing (GCODE), CNC, and water jet
+          cutting.
+        </li>
+        <li>
+          Assembled, programmed, and tuned 4 FPV drones, integrating electric
+          motors, flight controllers (Betaflight), and radio control systems.
+        </li>
+        <li>
+          Gained experience with motion control principles, sensor integration,
+          and embedded system programming.
+        </li>
+      </ul>
+    </TimeLineElement>
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">🚀 Projects</div>
+  </div>
+
+  <div class="time-line-container grid gap-4 mb-10">
+    <TimeLineElement
+      title="Physics-Based Numerical Modeling of Dynamic Systems"
+      subtitle="Academic Project - November 2023"
+      date="Nov 2023"
+    >
+      <ul class="list-disc list-inside space-y-1">
+        <li>
+          Developed numerical models for complex dynamic systems (e.g., double
+          pendulum) from first principles (Lagrangian mechanics).
+        </li>
+        <li>
+          Implemented and solved differential equations using numerical methods
+          (e.g., RK4, Euler) in Python (NumPy) and MATLAB.
+        </li>
+        <li>
+          Visualized system behavior with Matplotlib and analyzed computational
+          efficiency of numerical solution techniques.
+        </li>
+        <li>
+          Skills: Python, NumPy, Matplotlib, MATLAB, Lagrangian Mechanics,
+          Numerical Analysis.
+        </li>
+      </ul>
+    </TimeLineElement>
+
+    <TimeLineElement
+      title="Aerodynamic Analysis and Fluid System Validation"
+      subtitle="Physics Lab (PHYS 134) - March 2025"
+      date="Mar 2025"
+    >
+      <ul class="list-disc list-inside space-y-1">
+        <li>
+          Investigated fluid dynamic principles using Pitot tubes, Venturi
+          tubes, and airfoil lift analysis in a wind tunnel.
+        </li>
+        <li>
+          Collected and analyzed experimental data, validating results against
+          theoretical principles (Bernoulli, Navier-Stokes concepts) and XFLR5
+          simulations.
+        </li>
+        <li>
+          Designed experimental protocols, including sensor data acquisition
+          (pressure, velocity) and error analysis.
+        </li>
+        <li>
+          Gained insights into boundary layer effects and turbulence phenomena
+          in aerodynamic testing.
+        </li>
+        <li>
+          Skills: Experimental Design, Fluid Dynamics, Aerodynamic Testing,
+          XFLR5, Data Acquisition, Error Analysis.
+        </li>
+        <li>
+          <a
+            href="/Aerodynamics_Lab_Report.pdf"
+            target="_blank"
+            class="btn btn-link">View Full Report</a
+          >
+        </li>
+      </ul>
+    </TimeLineElement>
+
+    <TimeLineElement
+      title="Compton Scattering and Electron Mass Determination"
+      subtitle="Physics Lab (PHYS 134) - February 2025"
+      date="Feb 2025"
+    >
+      <ul class="list-disc list-inside space-y-1">
+        <li>
+          Investigated Compton scattering using a scintillation counter,
+          photomultiplier, and multi-channel analyzer.
+        </li>
+        <li>
+          Validated Dirac theory of the electron and the Klein-Nishina formula
+          by measuring scattered photon energy.
+        </li>
+        <li>
+          Calculated electron mass as (9.51 ± 0.15) x 10⁻³¹ kg (within 4.45% of
+          accepted value).
+        </li>
+        <li>
+          Determined proportionality constant between measured counts and
+          Klein-Nishina cross-section, finding strong agreement with theory.
+        </li>
+        <li>
+          Skills: Nuclear Physics Instrumentation, System Calibration, Gamma Ray
+          Spectroscopy, Gaussian Fitting, χ² Analysis, QED Principles.
+        </li>
+        <li>
+          <a
+            href="/Compton_Effect_Lab_Report.pdf"
+            target="_blank"
+            class="btn btn-link">View Full Report</a
+          >
+        </li>
+      </ul>
+    </TimeLineElement>
+    <TimeLineElement
+      title="Experimental Verification of the Zeeman Effect"
+      subtitle="Physics Lab (PHYS 134) - January 2025"
+      date="Jan 2025"
+    >
+      <ul class="list-disc list-inside space-y-1">
+        <li>
+          Observed the Zeeman effect by measuring the splitting of mercury
+          spectral lines in a magnetic field.
+        </li>
+        <li>
+          Utilized a Fabry-Perot etalon and CCD camera to project and measure
+          split interference rings.
+        </li>
+        <li>
+          Calculated the Bohr magneton for parallel and perpendicularly
+          polarized light (e.g., 8.37e-24 JT⁻¹ ±0.02).
+        </li>
+        <li>
+          Skills: Precision Optical Alignment, Fabry-Perot Interferometry, CCD
+          Imaging, Data Analysis, Quantum Mechanics.
+        </li>
+        <li>
+          <a
+            href="/Zeeman_Effect_Lab_Report.pdf"
+            target="_blank"
+            class="btn btn-link">View Full Report</a
+          >
+        </li>
+      </ul>
+    </TimeLineElement>
+
+    <TimeLineElement
+      title="Veritas Managed Solutions, Inc. Website"
+      subtitle="Company Project - January 2024"
+      date="Jan 2024"
+    >
+      <ul class="list-disc list-inside space-y-1">
+        <li>
+          Developed a full-stack company website using Astro, HTML/CSS, and
+          React.
+        </li>
+        <li>Integrated APIs such as Google Maps and SendGrid.</li>
+        <li>
+          Utilized Git for version control and worked within a Unix Shell
+          environment with VS Code.
+        </li>
+        <li>Focused on JavaScript in conjunction with APIs and ESM modules.</li>
+        <li>
+          Skills: Astro, HTML/CSS, React, JavaScript, API Integration, Git,
+          Full-Stack Development.
+        </li>
+      </ul>
     </TimeLineElement>
   </div>
 
@@ -182,8 +384,7 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"
             class="h-4 group-hover:fill-white"
-            ><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-            <path
+            ><path
               d="M448 230.2V480H0V230.2H141.1V355.1H306.9V230.2zM306.9 32H141.1V156.9H306.9z"
             ></path></svg
           >Photography</span
@@ -209,8 +410,7 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 576 512"
               class="h-4 group-hover:fill-white"
-              ><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-              <path
+              ><path
                 d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"
               ></path></svg
             >
