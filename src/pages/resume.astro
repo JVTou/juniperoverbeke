@@ -6,7 +6,7 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
 <BaseLayout title="Resume" sideBarActiveItemID="cv">
   <div class="grid grid-cols-2 items-center justify-around mb-8">
     <div class="text-4xl w-full font-bold text-white tracking-tight">Profile</div>
-    <a class="btn btn-secondary shadow-lg hover:shadow-xl transition-all duration-200" href="/JuniperoVerbeke.pdf" target="_blank">
+    <a class="fixed right-10 top-25 lg:top-10 btn btn-primary shadow-lg hover:shadow-xl transition-all duration-200" href="/JuniperoVerbeke.pdf" target="_blank">
       Download CV<svg
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
@@ -22,13 +22,25 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
   </div>
 
   <div class="mb-6">
+    <div class="text-3xl w-full font-bold text-white tracking-tight border-b-2 border-primary/20 pb-2">🔩 Semiconductor Focus</div>
+  </div>
+
+  <ul class="list-disc mx-6 mb-10 space-y-2 text-white/80 leading-relaxed">
+    <li><strong class="text-white font-semibold">Device & Test</strong>: CMOS/device physics exposure; I–V characterization, calibration, uncertainty and error analysis; data acquisition and automation.</li>
+    <li><strong class="text-white font-semibold">Controls & Mechatronics</strong>: motion/sensor integration, control loop design and PID tuning, embedded bring-up (Arduino) for tooling and fixtures.</li>
+    <li><strong class="text-white font-semibold">Data & Modeling</strong>: Python (NumPy, Matplotlib), MATLAB/Simulink for modeling, visualization, and experiment analysis; results reproducibility (LaTeX).</li>
+    <li><strong class="text-white font-semibold">Quality & Safety</strong>: ESD-safe handling, documentation standards, change control, and lab safety practices.</li>
+    <li><strong class="text-white font-semibold">Relevant Work</strong>: see Zeeman Effect, Compton Scattering, and Aerodynamics projects below for instrumentation, calibration, and analysis examples.</li>
+  </ul>
+
+  <div class="mb-6">
     <div class="text-3xl w-full font-bold text-white tracking-tight border-b-2 border-primary/20 pb-2">🎓 Education</div>
   </div>
 
   <div class="time-line-container grid gap-4 mb-10 text-white">
     <TimeLineElement
       title="San Jose State University"
-      subtitle="M.S. Aerospace Engineering"
+      subtitle="M.S. Electrical Engineering"
       date="In progress - June 2027"
     />
     <TimeLineElement
@@ -73,6 +85,7 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     <li>Python</li>
     <li>MATLAB</li>
     <li>Simulink</li>
+    <li>SciPy</li>
     <li>JavaScript</li>
     <li>HTML5/CSS3</li>
     <li>LaTeX</li>
@@ -88,6 +101,9 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     <li>NumPy</li>
     <li>Matplotlib</li>
     <li>R</li>
+    <li>Arduino</li>
+    <li>Flight Controller Configuration</li>
+    <li>Sensor Integration</li>
     <li>Optical System Design & Alignment</li>
     <li>Spectroscopy</li>
     <li>Interferometry</li>
@@ -101,6 +117,10 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     <li>Classical Mechanics</li>
     <li>3D Printing (GCODE)</li>
     <li>CNC</li>
+    <li>Water Jet Cutting</li>
+    <li>Dynamic Modeling</li>
+    <li>Control Systems (Design, Analysis, PID Tuning)</li>
+    <li>Circuit Analysis</li>
   </ul>
 
   <div class="mb-6">
@@ -165,7 +185,7 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
   </div>
 
   <div class="mb-6">
-    <div class="text-3xl w-full font-bold text-white tracking-tight border-b-2 border-primary/20 pb-2">🚀 Projects</div>
+    <div id="projects" class="text-3xl w-full font-bold text-white tracking-tight border-b-2 border-primary/20 pb-2">🚀 Projects</div>
   </div>
 
   <div class="time-line-container grid gap-4 mb-10">
@@ -227,6 +247,21 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
             target="_blank"
             class="btn btn-link hover:text-primary-focus transition-colors text-white/85">View GitHub Repository</a
           >
+        </li>
+      </ul>
+    </TimeLineElement>
+
+    <TimeLineElement
+      title="Real-Time LED Backlighting with Arduino"
+      subtitle="Arduino, C++, Embedded Systems - December 2023"
+      date="Dec 2023"
+    >
+      <ul class="list-disc list-inside space-y-3 text-white/85 leading-relaxed">
+        <li class="pl-2">
+          Developed an ambient lighting system using an Arduino microcontroller to control digital LEDs for real-time screen backlighting.
+        </li>
+        <li class="pl-2">
+          Used Arduino libraries to process screen color data and drive the LED strips, enhancing user experience.
         </li>
       </ul>
     </TimeLineElement>
