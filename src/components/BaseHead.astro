@@ -48,3 +48,12 @@ const {
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
 <SpeedInsights />
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CP34VJ2NLD"></script>
+<script is:inline>
+  window['dataLayer'] = window['dataLayer'] || [];
+  function gtag(){ window['dataLayer'].push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-CP34VJ2NLD');
+</script>
