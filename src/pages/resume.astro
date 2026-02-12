@@ -6,7 +6,7 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
 <BaseLayout title="Resume" sideBarActiveItemID="cv">
   <div class="grid grid-cols-2 items-center justify-around mb-8">
     <div class="text-4xl w-full font-bold text-white tracking-tight">Profile</div>
-    <a class="fixed right-10 top-25 lg:top-10 btn btn-primary shadow-lg hover:shadow-xl transition-all duration-200" href="/JuniperoVerbeke.pdf" target="_blank">
+    <a class="fixed right-10 top-25 lg:top-10 btn btn-accent shadow-lg hover:shadow-xl transition-all duration-200" href="/JuniperoVerbeke.pdf" target="_blank">
       Download CV<svg
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
@@ -20,18 +20,6 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
       </svg>
     </a>
   </div>
-
-  <div class="mb-6">
-    <div class="text-3xl w-full font-bold text-white tracking-tight border-b-2 border-primary/20 pb-2">🔩 Semiconductor Focus</div>
-  </div>
-
-  <ul class="list-disc mx-6 mb-10 space-y-2 text-white/80 leading-relaxed">
-    <li><strong class="text-white font-semibold">Device & Test</strong>: CMOS/device physics exposure; I–V characterization, calibration, uncertainty and error analysis; data acquisition and automation.</li>
-    <li><strong class="text-white font-semibold">Controls & Mechatronics</strong>: motion/sensor integration, control loop design and PID tuning, embedded bring-up (Arduino) for tooling and fixtures.</li>
-    <li><strong class="text-white font-semibold">Data & Modeling</strong>: Python (NumPy, Matplotlib), MATLAB/Simulink for modeling, visualization, and experiment analysis; results reproducibility (LaTeX).</li>
-    <li><strong class="text-white font-semibold">Quality & Safety</strong>: ESD-safe handling, documentation standards, change control, and lab safety practices.</li>
-    <li><strong class="text-white font-semibold">Relevant Work</strong>: see Zeeman Effect, Compton Scattering, and Aerodynamics projects below for instrumentation, calibration, and analysis examples.</li>
-  </ul>
 
   <div class="mb-6">
     <div class="text-3xl w-full font-bold text-white tracking-tight border-b-2 border-primary/20 pb-2">🎓 Education</div>
@@ -86,21 +74,24 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     <li>MATLAB</li>
     <li>Simulink</li>
     <li>SciPy</li>
-    <li>JavaScript</li>
+    <li>NumPy</li>
+    <li>Matplotlib</li>
     <li>C</li>
+    <li>JavaScript</li>
+    <li>Verilog</li>
     <li>HTML5/CSS3</li>
     <li>LaTeX</li>
     <li>Git/GitHub</li>
     <li>Unix Shell</li>
     <li>VS Code</li>
+    <li>Synopsys TCAD</li>
+    <li>Spice</li>
     <li>AutoCAD</li>
     <li>Fusion 360</li>
     <li>XFLR5</li>
     <li>Blender</li>
     <li>Astro</li>
     <li>React</li>
-    <li>NumPy</li>
-    <li>Matplotlib</li>
     <li>R</li>
     <li>Arduino</li>
     <li>Flight Controller Configuration</li>
@@ -129,6 +120,38 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
   </div>
 
   <div class="time-line-container grid gap-4 mb-10">
+    <TimeLineElement
+      title="FinFET and Nanowire SRAM Radiation Hardness Studies"
+      date="Oct 2025 - Present"
+      subtitle="TCAD Simulation Framework"
+    >
+      <ul class="list-disc list-inside space-y-3 text-white/85 leading-relaxed">
+        <li class="pl-2">
+          Extensive usage of Synopsys Sentaurus TCAD Suite (SDevice, Structure Editor, SProcess, SVisual, Sentaurus
+          Workbench, Silicon Workbench, Sentaurus Data Explorer) to model advanced CMOS structures and SRAM cells.
+        </li>
+        <li class="pl-2">
+          Characterized and modeled FinFET and gate-all-around FET devices and SRAMs under radiation using TCAD
+          device and process simulations.
+        </li>
+      </ul>
+    </TimeLineElement>
+    <TimeLineElement
+      title="Lawrence Livermore National Laboratory"
+      date="Nov 2025 - Present"
+      subtitle="Research Collaboration"
+    >
+      <ul class="list-disc list-inside space-y-3 text-white/85 leading-relaxed">
+        <li class="pl-2">
+          Initiated a joint effort between LLNL and San Jose State University to study the response of a cable in a metal
+          cavity under X-ray irradiation.
+        </li>
+        <li class="pl-2">
+          Implemented a SPICE simulation environment to analyze the effects of radiation-induced electromagnetic fields
+          on cable and system behavior.
+        </li>
+      </ul>
+    </TimeLineElement>
     <TimeLineElement
       title="Custom Mechatronic Systems Design & Fabrication"
       date="June 2020 - Present"
