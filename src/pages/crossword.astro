@@ -1,0 +1,514 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="5x5 Crossword" sideBarActiveItemID="">
+  <div
+    class="rounded-2xl overflow-hidden shadow-2xl mx-auto my-4 xl:my-8"
+    style="font-family: Arial, Helvetica, sans-serif; background-color: white; color: black; padding: 2rem 1rem; max-width: max-content;"
+  >
+    <div class="max-w-[1000px] mx-auto flex flex-col items-center">
+      <!-- Header -->
+      <div
+        class="w-full mb-8 text-center sm:text-left sm:flex sm:justify-between sm:items-end border-b border-gray-300 pb-4 px-4"
+      >
+        <h1
+          class="text-4xl font-serif text-black uppercase font-bold tracking-widest pl-4"
+        >
+          The Mini Crossword
+        </h1>
+      </div>
+
+      <!-- Content Area -->
+      <div class="w-full flex flex-col lg:flex-row gap-8 px-4 lg:px-8">
+        <!-- Left side: The Board -->
+        <div class="flex flex-col items-center lg:items-start flex-shrink-0">
+          <!-- Grid Container -->
+          <div
+            id="crossword-grid"
+            class="flex flex-col bg-black gap-[1px] p-[1px]"
+          >
+            <!-- Rows will be injected here -->
+          </div>
+
+          <!-- Buttons -->
+          <div class="mt-6 flex gap-3 w-full justify-center lg:justify-start">
+          </div>
+
+          <!-- Final Easter Egg Message -->
+          <div
+            id="final-message"
+            class="mt-8 text-2xl font-bold text-green-600 opacity-0 transition-opacity duration-700 pointer-events-none text-center lg:text-left w-full tracking-wider"
+          >
+            happyeaster2026
+          </div>
+        </div>
+
+        <!-- Right side: Clues -->
+        <div
+          class="flex-grow flex flex-col sm:flex-row gap-8 lg:gap-12 mt-4 lg:mt-0 w-full pt-2"
+        >
+          <!-- Across Clues -->
+          <div class="flex-1">
+            <h3
+              class="text-xs font-bold mb-2 uppercase border-b border-black pb-1 mb-3"
+            >
+              Across
+            </h3>
+            <ul id="clues-across" class="space-y-1">
+              <!-- across clues injected -->
+            </ul>
+          </div>
+
+          <!-- Down Clues -->
+          <div class="flex-1">
+            <h3
+              class="text-xs font-bold mb-2 uppercase border-b border-black pb-1 mb-3"
+            >
+              Down
+            </h3>
+            <ul id="clues-down" class="space-y-1">
+              <!-- down clues injected -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    body {
+      background-color: white !important;
+    }
+
+    #crossword-grid {
+      border: 1px solid black;
+    }
+
+    .cell-input {
+      background-color: white;
+      width: clamp(2.2rem, 8vw, 3.2rem);
+      height: clamp(2.2rem, 8vw, 3.2rem);
+      text-align: center;
+      font-size: clamp(1.2rem, 4vw, 1.8rem);
+      font-weight: 500;
+      text-transform: uppercase;
+      outline: none;
+      caret-color: transparent;
+      cursor: pointer;
+      display: block;
+      transition: background-color 0.1s;
+    }
+
+    .cell-input.focused-word {
+      background-color: #a7d8ff !important;
+    }
+    .cell-input.focused-cell {
+      background-color: #ffda00 !important;
+    }
+
+    .cell-input.egg-highlight {
+      background-color: #a1e0b5 !important;
+      animation: completePulse 2s ease infinite;
+    }
+
+    @keyframes completePulse {
+      0% {
+        background-color: #a1e0b5;
+      }
+      50% {
+        background-color: #ffccff;
+      }
+      100% {
+        background-color: #a1e0b5;
+      }
+    }
+
+    .clue-item {
+      cursor: pointer;
+      padding: 3px 0;
+      font-size: 15px;
+      line-height: 1.3;
+      display: flex;
+    }
+    .clue-item.active {
+      background-color: #a7d8ff;
+    }
+  </style>
+
+  <script>
+    const answerKey = [
+      ["Q", "U", "A", "S", "I"],
+      ["U", "N", "D", "E", "R"],
+      ["I", "D", "I", "N", "A"],
+      ["T", "I", "E", "D", "#"],
+      ["E", "D", "U", "#", "#"],
+    ];
+
+    const cellNumbers = {
+      "0-0": 1,
+      "0-1": 2,
+      "0-2": 3,
+      "0-3": 4,
+      "0-4": 5,
+      "1-0": 6,
+      "2-0": 7,
+      "3-0": 8,
+      "4-0": 9,
+    };
+
+    const acrossCluesMap = {
+      1: 'Prefix meaning "similar to"',
+      6: "Down ___ (Australia)",
+      7: 'Menzel of Broadway\'s "Wicked"',
+      8: "Knotted",
+      9: "College URL ending",
+    };
+
+    const downCluesMap = {
+      1: '"Almost, but not ___"',
+      2: "Took apart",
+      3: "French farewell",
+      4: "E-mail action",
+      5: "Lyricist Gershwin",
+    };
+
+    let direction = "across";
+    let activeRow = 0;
+    let activeCol = 0;
+    const gridRows = 5;
+    const gridCols = 5;
+
+    function buildGrid() {
+      const gridEl = document.getElementById("crossword-grid");
+      if (!gridEl) return;
+
+      for (let r = 0; r < gridRows; r++) {
+        const rowEl = document.createElement("div");
+        rowEl.className = "flex gap-[1px]";
+        for (let c = 0; c < gridCols; c++) {
+          const cellContainer = document.createElement("div");
+
+          if (answerKey[r][c] === "#") {
+            cellContainer.className = "black-square bg-black border-none";
+            cellContainer.style.width = "clamp(2.2rem, 8vw, 3.2rem)";
+            cellContainer.style.height = "clamp(2.2rem, 8vw, 3.2rem)";
+          } else {
+            cellContainer.className =
+              "relative bg-white flex items-center justify-center";
+            cellContainer.style.width = "clamp(2.2rem, 8vw, 3.2rem)";
+            cellContainer.style.height = "clamp(2.2rem, 8vw, 3.2rem)";
+
+            const num = cellNumbers[`${r}-${c}`];
+            if (num) {
+              const numEl = document.createElement("span");
+              numEl.className =
+                "absolute top-0.5 left-1 text-[11px] font-sans text-black z-10 pointer-events-none select-none leading-none";
+              numEl.innerText = num.toString();
+              cellContainer.appendChild(numEl);
+            }
+
+            const input = document.createElement("input");
+            input.type = "text";
+            input.maxLength = 1;
+            input.style.backgroundColor = "white";
+            input.className =
+              "cell-input text-black w-full h-full border-none m-0 p-0 shadow-none relative";
+            input.dataset.row = r.toString();
+            input.dataset.col = c.toString();
+
+            // Handlers
+            input.addEventListener("focus", () => {
+              if (activeRow !== r || activeCol !== c) {
+                activeRow = r;
+                activeCol = c;
+              }
+              updateHighlights();
+            });
+
+            input.addEventListener("click", () => {
+              if (activeRow === r && activeCol === c) {
+                direction = direction === "across" ? "down" : "across";
+                updateHighlights();
+              }
+            });
+
+            input.addEventListener("keydown", (e) => {
+              if (e.key === "ArrowRight") {
+                let nC = activeCol + 1;
+                while (nC < gridCols - 1 && answerKey[activeRow][nC] === "#")
+                  nC++;
+                if (nC < gridCols && answerKey[activeRow][nC] !== "#") {
+                  activeCol = nC;
+                  focusCell(activeRow, activeCol);
+                }
+              } else if (e.key === "ArrowLeft") {
+                let nC = activeCol - 1;
+                while (nC > 0 && answerKey[activeRow][nC] === "#") nC--;
+                if (nC >= 0 && answerKey[activeRow][nC] !== "#") {
+                  activeCol = nC;
+                  focusCell(activeRow, activeCol);
+                }
+              } else if (e.key === "ArrowUp") {
+                let nR = activeRow - 1;
+                while (nR > 0 && answerKey[nR][activeCol] === "#") nR--;
+                if (nR >= 0 && answerKey[nR][activeCol] !== "#") {
+                  activeRow = nR;
+                  focusCell(activeRow, activeCol);
+                }
+              } else if (e.key === "ArrowDown") {
+                let nR = activeRow + 1;
+                while (nR < gridRows - 1 && answerKey[nR][activeCol] === "#")
+                  nR++;
+                if (nR < gridRows && answerKey[nR][activeCol] !== "#") {
+                  activeRow = nR;
+                  focusCell(activeRow, activeCol);
+                }
+              } else if (e.key === "Backspace") {
+                if (input.value !== "") {
+                  input.value = "";
+                } else {
+                  movePrev();
+                  const prevInput = getCellInput(activeRow, activeCol);
+                  if (prevInput) {
+                    prevInput.value = "";
+                  }
+                }
+                updateHighlights();
+              } else if (e.key.match(/^[a-zA-Z0-9]$/)) {
+              } else if (e.key !== "Tab") {
+                e.preventDefault();
+              }
+            });
+
+            input.addEventListener("input", () => {
+              if (input.value) {
+                input.value = input.value.toUpperCase();
+                moveNext();
+              }
+              checkCompletion();
+            });
+
+            cellContainer.appendChild(input);
+          }
+          rowEl.appendChild(cellContainer);
+        }
+        gridEl.appendChild(rowEl);
+      }
+    }
+
+    function buildClues() {
+      const acrossUl = document.getElementById("clues-across");
+      const downUl = document.getElementById("clues-down");
+
+      Object.entries(acrossCluesMap).forEach(([numStr, clue]) => {
+        const li = document.createElement("li");
+        li.className = "clue-item pl-1 pr-2";
+        li.dataset.num = numStr;
+        li.dataset.dir = "across";
+        li.innerHTML = `<span class="font-bold w-5 shrink-0 text-right mr-2">${numStr}</span><span>${clue}</span>`;
+        li.addEventListener("click", () => {
+          direction = "across";
+          focusWordStart(parseInt(numStr), "across");
+        });
+        if (acrossUl) acrossUl.appendChild(li);
+      });
+
+      Object.entries(downCluesMap).forEach(([numStr, clue]) => {
+        const li = document.createElement("li");
+        li.className = "clue-item pl-1 pr-2";
+        li.dataset.num = numStr;
+        li.dataset.dir = "down";
+        li.innerHTML = `<span class="font-bold w-5 shrink-0 text-right mr-2">${numStr}</span><span>${clue}</span>`;
+        li.addEventListener("click", () => {
+          direction = "down";
+          focusWordStart(parseInt(numStr), "down");
+        });
+        if (downUl) downUl.appendChild(li);
+      });
+    }
+
+    function getCellInput(r, c) {
+      return document.querySelector(
+        `input[data-row="${r}"][data-col="${c}"]`,
+      ) as HTMLInputElement | null;
+    }
+
+    function focusCell(r, c) {
+      const input = getCellInput(r, c);
+      if (input) input.focus();
+    }
+
+    function focusWordStart(num, dir) {
+      for (const [key, val] of Object.entries(cellNumbers)) {
+        if (val === num) {
+          const [r, c] = key.split("-").map(Number);
+          activeRow = r;
+          activeCol = c;
+          direction = dir;
+          focusCell(r, c);
+          updateHighlights();
+          break;
+        }
+      }
+    }
+
+    function moveNext() {
+      if (direction === "across") {
+        if (
+          activeCol < gridCols - 1 &&
+          answerKey[activeRow][activeCol + 1] !== "#"
+        ) {
+          activeCol++;
+          focusCell(activeRow, activeCol);
+        }
+      } else {
+        if (
+          activeRow < gridRows - 1 &&
+          answerKey[activeRow + 1][activeCol] !== "#"
+        ) {
+          activeRow++;
+          focusCell(activeRow, activeCol);
+        }
+      }
+    }
+
+    function movePrev() {
+      if (direction === "across") {
+        if (activeCol > 0 && answerKey[activeRow][activeCol - 1] !== "#") {
+          activeCol--;
+          focusCell(activeRow, activeCol);
+        }
+      } else {
+        if (activeRow > 0 && answerKey[activeRow - 1][activeCol] !== "#") {
+          activeRow--;
+          focusCell(activeRow, activeCol);
+        }
+      }
+    }
+
+    function getActiveClueNumber() {
+      let startRow = activeRow;
+      let startCol = activeCol;
+      if (direction === "across") {
+        while (startCol > 0 && answerKey[activeRow][startCol - 1] !== "#")
+          startCol--;
+      } else {
+        while (startRow > 0 && answerKey[startRow - 1][activeCol] !== "#")
+          startRow--;
+      }
+      return cellNumbers[`${startRow}-${startCol}`] || null;
+    }
+
+    function updateHighlights() {
+      document.querySelectorAll(".cell-input").forEach((el) => {
+        const input = el as HTMLInputElement;
+        input.classList.remove("focused-cell", "focused-word");
+      });
+      document.querySelectorAll(".clue-item").forEach((item) => {
+        item.classList.remove("active");
+      });
+
+      if (direction === "across") {
+        for (
+          let c = activeCol;
+          c >= 0 && answerKey[activeRow][c] !== "#";
+          c--
+        ) {
+          const input = getCellInput(activeRow, c);
+          if (input) input.classList.add("focused-word");
+        }
+        for (
+          let c = activeCol + 1;
+          c < gridCols && answerKey[activeRow][c] !== "#";
+          c++
+        ) {
+          const input = getCellInput(activeRow, c);
+          if (input) input.classList.add("focused-word");
+        }
+      } else {
+        for (
+          let r = activeRow;
+          r >= 0 && answerKey[r][activeCol] !== "#";
+          r--
+        ) {
+          const input = getCellInput(r, activeCol);
+          if (input) input.classList.add("focused-word");
+        }
+        for (
+          let r = activeRow + 1;
+          r < gridRows && answerKey[r][activeCol] !== "#";
+          r++
+        ) {
+          const input = getCellInput(r, activeCol);
+          if (input) input.classList.add("focused-word");
+        }
+      }
+
+      const currentInput = getCellInput(activeRow, activeCol);
+      if (currentInput) {
+        currentInput.classList.remove("focused-word");
+        currentInput.classList.add("focused-cell");
+      }
+
+      const num = getActiveClueNumber();
+      if (num) {
+        const clueEl = document.querySelector(
+          `.clue-item[data-num="${num}"][data-dir="${direction}"]`,
+        );
+        if (clueEl) {
+          clueEl.classList.add("active");
+        }
+      }
+    }
+
+    function checkCompletion() {
+      let complete = true;
+      let allFilled = true;
+
+      for (let r = 0; r < gridRows; r++) {
+        for (let c = 0; c < gridCols; c++) {
+          if (answerKey[r][c] === "#") continue;
+          const input = getCellInput(r, c);
+          if (!input) continue;
+
+          const val = input.value.toUpperCase();
+          if (val === "") {
+            allFilled = false;
+            complete = false;
+          } else if (val !== answerKey[r][c]) {
+            complete = false;
+          }
+        }
+      }
+
+      if (allFilled && complete) {
+        unlockEasterEgg();
+      }
+    }
+
+    function unlockEasterEgg() {
+      // Pulse the whole 5x5 board since the words span the whole grid
+      document.querySelectorAll(".cell-input").forEach((el) => {
+        const input = el as HTMLInputElement;
+        input.classList.add("egg-highlight");
+      });
+
+      // Show message
+      const finalMsg = document.getElementById("final-message");
+      if (finalMsg) {
+        finalMsg.classList.remove("opacity-0");
+        finalMsg.classList.add("opacity-100");
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      buildGrid();
+      buildClues();
+      setTimeout(() => {
+        focusCell(0, 0);
+        updateHighlights();
+      }, 100);
+    });
+  </script>
+</BaseLayout>
