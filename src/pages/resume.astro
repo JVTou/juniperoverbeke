@@ -29,12 +29,12 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     <TimeLineElement
       title="San Jose State University"
       subtitle="M.S. Electrical Engineering"
-      date="In progress - June 2027"
+      date="Expected June 2027"
     />
     <TimeLineElement
       title="University of California, Santa Cruz"
       subtitle="B.S. Applied Physics"
-      date="September 2023 - June 2025"
+      date="June 2025"
     />
     <TimeLineElement
       title="Mission-West Valley Community College - Santa Clara, CA"
@@ -116,6 +116,17 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
   </ul>
 
   <div class="mb-6">
+    <div class="text-3xl w-full font-bold text-white tracking-tight border-b-2 border-primary/20 pb-2">📚 Publications</div>
+  </div>
+
+  <ul class="list-disc mx-6 mb-10 grid gap-2 text-white/80 leading-relaxed">
+    <li>
+      A. Lu, <strong class="text-white font-semibold">J. Verbeke</strong>, P. Oldiges, R. Arghavani, H. Y. Wong, "Self-Heating and Radiation Hardness Studies of 3nm GAA-FET-Based SRAM with Different Substrate Isolation Techniques," <em>arXiv:2607.05789</em>, 2026.
+      <a href="https://arxiv.org/abs/2607.05789" target="_blank" class="text-primary hover:underline">[link]</a>
+    </li>
+  </ul>
+
+  <div class="mb-6">
     <div class="text-3xl w-full font-bold text-white tracking-tight border-b-2 border-primary/20 pb-2">⏳ Experience</div>
   </div>
 
@@ -128,41 +139,42 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
       <ul class="list-disc list-inside space-y-3 text-white/85 leading-relaxed">
         <li class="pl-2">
           Extensive usage of Synopsys Sentaurus TCAD Suite (SDevice, Structure Editor, SProcess, SVisual, Sentaurus
-          Workbench, Silicon Workbench, Sentaurus Data Explorer) to model advanced CMOS structures and SRAM cells.
+          Workbench, Silicon Workbench, Sentaurus Data Explorer).
         </li>
         <li class="pl-2">
-          Characterized and modeled FinFET and gate-all-around FET devices and SRAMs under radiation using TCAD
-          device and process simulations.
+          Characterized and modeled FinFET and Gate-All-Around FET devices and SRAMs under radiation using TCAD
+          simulation (device simulation, process simulation, layout).
+        </li>
+      </ul>
+    </TimeLineElement>
+    <TimeLineElement
+      title="TSMC Washington"
+      date="May 2026 - August 2026"
+      subtitle="Etch Equipment Engineer Intern"
+    >
+      <ul class="list-disc list-inside space-y-3 text-white/85 leading-relaxed">
+        <li class="pl-2">
+          Programmed and maintained Applied Materials and Mattson etch tools.
+        </li>
+        <li class="pl-2">
+          Designed and fabricated custom troubleshooting devices and made modifications to tools using KiCAD, CAD tools and 3D printing.
+        </li>
+        <li class="pl-2">
+          Performed hardware troubleshooting and soldering on electronic, hydraulic, vacuum and cooling subsystems.
         </li>
       </ul>
     </TimeLineElement>
     <TimeLineElement
       title="Lawrence Livermore National Laboratory"
-      date="Nov 2025 - Present"
+      date="Nov 2025 - March 2026"
       subtitle="Research Collaboration"
     >
       <ul class="list-disc list-inside space-y-3 text-white/85 leading-relaxed">
         <li class="pl-2">
-          Initiated a joint effort between LLNL and San Jose State University to study the response of a cable in a metal
-          cavity under X-ray irradiation.
+          Initiated a joint effort between LLNL & SJSU on response of a cable in a metal cavity under X-ray irradiation.
         </li>
         <li class="pl-2">
-          Implemented a SPICE simulation environment to analyze the effects of radiation-induced electromagnetic fields
-          on cable and system behavior.
-        </li>
-      </ul>
-    </TimeLineElement>
-    <TimeLineElement
-      title="Custom Mechatronic Systems Design & Fabrication"
-      date="June 2020 - Present"
-      subtitle="Personal Business; CAD, Controls"
-    >
-      <ul class="list-disc list-inside space-y-3 text-white/85 leading-relaxed">
-        <li class="pl-2">
-          Designed, modeled (Blender, AutoCAD, Fusion360), and <strong class="text-white font-semibold">fabricated custom mechanical components</strong> for personal and customer projects using 3D printing (GCODE), CNC, and water jet cutting techniques.
-        </li>
-        <li class="pl-2">
-          Assembled, programmed, and tuned 4 FPV drones, designed for personal videography.
+          Implemented a QSPICE environment to analyze effects of radiation-induced electromagnetic fields.
         </li>
       </ul>
     </TimeLineElement>
@@ -173,36 +185,10 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     >
       <ul class="list-disc list-inside space-y-3 text-white/85 leading-relaxed">
         <li class="pl-2">
-          Planning and estimating <strong class="text-white font-semibold">200+ security projects</strong>, including <strong class="text-white font-semibold">Tesla Gigafactories Sparks and Austin</strong>.
+          Spearheaded the formation of the engineering team, contributing to revenue growth from <strong class="text-white font-semibold">$10M to $28M</strong> through expansion into advanced low-voltage projects.
         </li>
         <li class="pl-2">
-          Spearheaded the formation of the engineering team, directly <strong class="text-white font-semibold">enabling new lines of business</strong> in security projects that contributed to Veritas's revenue growth in this sector from <strong class="text-white font-semibold">$10M to $28M</strong>.
-        </li>
-        <li class="pl-2">
-          Authored 5 universal guides for technician system implementation, <strong class="text-white font-semibold">decreasing time spent on projects by 5%</strong>.
-        </li>
-        <li class="pl-2">
-          Automated proposal creation using Word, Visio and Excel, <strong class="text-white font-semibold">decreasing time spent creating proposals by 80%</strong>.
-        </li>
-        <li class="pl-2">
-          Created 3D animations in Blender for publicity and introduced social media presence to the company, resulting in <strong class="text-white font-semibold">3 new hires per month</strong> on average.
-        </li>
-        <li class="pl-2">
-          Renovated the company website, <strong class="text-white font-semibold">developing a full-stack web page</strong> in React increasing website visits from 24 to 4.4k per month.
-        </li>
-      </ul>
-    </TimeLineElement>
-    <TimeLineElement
-      title="St. Thomas More School"
-      date="September 2022 - Present"
-      subtitle="Technology Support"
-    >
-      <ul class="list-disc list-inside space-y-3 text-white/85 leading-relaxed">
-        <li class="pl-2">
-          Maintenance of St. Thomas More School's computer network and media rooms.
-        </li>
-        <li class="pl-2">
-          Filmed and photographed events with <strong class="text-white font-semibold">rapid turnaround</strong> (day of to 2 days from filming).
+          Engineered and estimated over 200 bids, with large-scale system deployments at <strong class="text-white font-semibold">Tesla Gigafactories</strong> NV & TX.
         </li>
       </ul>
     </TimeLineElement>
