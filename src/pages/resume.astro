@@ -48,72 +48,7 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     />
   </div>
 
-  <div class="mb-6">
-    <div class="text-3xl w-full font-bold text-white tracking-tight border-b-2 border-primary/20 pb-2">📝 Coursework</div>
-  </div>
 
-  <ul class="list-disc md:columns-4 columns-2 mx-6 mb-10 space-y-2 text-white/80 leading-relaxed">
-    <li>Advanced Classical Mechanics</li>
-    <li>Linear Algebra</li>
-    <li>Vector Calculus</li>
-    <li>Differential Equations</li>
-    <li>Statistical Mechanics</li>
-    <li>Thermodynamics</li>
-    <li>Quantum Physics</li>
-    <li>Object-Oriented Programming</li>
-    <li>Feedback Control Systems</li>
-    <li>Electromagnetics</li>
-  </ul>
-
-  <div class="mb-6">
-    <div class="text-3xl w-full font-bold text-white tracking-tight border-b-2 border-primary/20 pb-2">🛠️ Skills</div>
-  </div>
-
-  <ul class="list-disc md:columns-5 columns-2 mx-6 mb-10 space-y-2 text-white/80 leading-relaxed">
-    <li>Python</li>
-    <li>MATLAB</li>
-    <li>Simulink</li>
-    <li>SciPy</li>
-    <li>NumPy</li>
-    <li>Matplotlib</li>
-    <li>C</li>
-    <li>JavaScript</li>
-    <li>Verilog</li>
-    <li>HTML5/CSS3</li>
-    <li>LaTeX</li>
-    <li>Git/GitHub</li>
-    <li>Unix Shell</li>
-    <li>VS Code</li>
-    <li>Synopsys TCAD</li>
-    <li>Spice</li>
-    <li>AutoCAD</li>
-    <li>Fusion 360</li>
-    <li>XFLR5</li>
-    <li>Blender</li>
-    <li>Astro</li>
-    <li>React</li>
-    <li>R</li>
-    <li>Arduino</li>
-    <li>Flight Controller Configuration</li>
-    <li>Sensor Integration</li>
-    <li>Optical System Design & Alignment</li>
-    <li>Spectroscopy</li>
-    <li>Interferometry</li>
-    <li>Radiation Detection</li>
-    <li>Numerical Methods (RK4, Euler)</li>
-    <li>Data Acquisition</li>
-    <li>Error Analysis</li>
-    <li>Thermodynamics</li>
-    <li>Fluid Dynamics</li>
-    <li>Heat Transfer</li>
-    <li>Classical Mechanics</li>
-    <li>3D Printing (GCODE)</li>
-    <li>CNC</li>
-    <li>Water Jet Cutting</li>
-    <li>Dynamic Modeling</li>
-    <li>Control Systems (Design, Analysis, PID Tuning)</li>
-    <li>Circuit Analysis</li>
-  </ul>
 
   <div class="mb-6">
     <div class="text-3xl w-full font-bold text-white tracking-tight border-b-2 border-primary/20 pb-2">📚 Publications</div>
@@ -199,6 +134,36 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
   </div>
 
   <div class="time-line-container grid gap-4 mb-10">
+    <TimeLineElement
+      title="RFIC Low Noise Amplifier (LNA) Design"
+      subtitle="EE 220 RFIC I Final Project - San Jose State University"
+      date="Dec 2025"
+    >
+      <ul class="list-disc list-inside space-y-3 text-white/85 leading-relaxed">
+        <li class="pl-2">
+          Designed and simulated a 2.45 GHz Low Noise Amplifier using Cadence and Keysight Advanced Design System (ADS).
+        </li>
+        <li class="pl-2">
+          Achieved a gain (S<sub>21</sub>) of 16.25 dB and a Noise Figure of 1.25 dB within a 2 mW power constraint.
+        </li>
+        <li class="pl-2">
+          Implemented a common-source amplifier with inductive source degeneration using <code>nmos1v_nat</code> devices for optimal high-frequency performance.
+        </li>
+        <li class="pl-2">
+          Evaluated and compared lumped and distributed matching networks for optimal return loss and bandwidth.
+        </li>
+        <li class="pl-2">
+          Skills: RFIC Design, LNA, Cadence, Keysight ADS, Impedance Matching, Circuit Simulation.
+        </li>
+        <li class="pl-2">
+          <a
+            href="/LNA_Design_Project_Final_Report.pdf"
+            target="_blank"
+            class="btn btn-link hover:text-primary-focus transition-colors text-white/85">View Final Report (PDF)</a
+          >
+        </li>
+      </ul>
+    </TimeLineElement>
     <TimeLineElement
       title="Quantum Games: Theoretical Framework and Strategic Advantages"
       subtitle="Academic Research Paper - December 2024"
