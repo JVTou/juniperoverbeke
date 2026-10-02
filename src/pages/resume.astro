@@ -5,8 +5,14 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
 
 <BaseLayout title="Resume" sideBarActiveItemID="cv">
   <div class="grid grid-cols-2 items-center justify-around mb-8">
-    <div class="text-4xl w-full font-bold text-white tracking-tight">Profile</div>
-    <a class="fixed right-10 top-25 lg:top-10 btn btn-accent shadow-lg hover:shadow-xl transition-all duration-200" href="/JuniperoVerbeke.pdf" target="_blank">
+    <div class="text-4xl w-full font-bold text-white tracking-tight">
+      Profile
+    </div>
+    <a
+      class="fixed right-10 top-25 lg:top-10 btn btn-accent shadow-lg hover:shadow-xl transition-all duration-200"
+      href="/JuniperoVerbeke.pdf"
+      target="_blank"
+    >
       Download CV<svg
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
@@ -22,7 +28,11 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
   </div>
 
   <div class="mb-6">
-    <div class="text-3xl w-full font-bold text-white tracking-tight border-b-2 border-primary/20 pb-2">🎓 Education</div>
+    <div
+      class="text-3xl w-full font-bold text-white tracking-tight border-b-2 border-primary/20 pb-2"
+    >
+      🎓 Education
+    </div>
   </div>
 
   <div class="time-line-container grid gap-4 mb-10 text-white">
@@ -48,21 +58,47 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     />
   </div>
 
-
-
   <div class="mb-6">
-    <div class="text-3xl w-full font-bold text-white tracking-tight border-b-2 border-primary/20 pb-2">📚 Publications</div>
+    <div
+      class="text-3xl w-full font-bold text-white tracking-tight border-b-2 border-primary/20 pb-2"
+    >
+      📚 Publications and Awards
+    </div>
   </div>
 
   <ul class="list-disc mx-6 mb-10 grid gap-2 text-white/80 leading-relaxed">
     <li>
-      A. Lu, <strong class="text-white font-semibold">J. Verbeke</strong>, P. Oldiges, R. Arghavani, H. Y. Wong, "Self-Heating and Radiation Hardness Studies of 3nm GAA-FET-Based SRAM with Different Substrate Isolation Techniques," <em>arXiv:2607.05789</em>, 2026.
-      <a href="https://arxiv.org/abs/2607.05789" target="_blank" class="text-primary hover:underline">[link]</a>
+      A. Lu, <strong class="text-white font-semibold">J. Verbeke</strong>, P.
+      Oldiges, R. Arghavani, H. Y. Wong, "Self-Heating and Radiation Hardness
+      Studies of 3nm GAA-FET-Based SRAM with Different Substrate Isolation
+      Techniques," <em>arXiv:2607.05789</em>, 2026.
+      <a
+        href="https://arxiv.org/abs/2607.05789"
+        target="_blank"
+        class="text-primary hover:underline">[link]</a
+      >
+    </li>
+    <li>
+      <strong class="text-white font-semibold">Walter C. Benzing Fellow</strong> —
+      San Jose State University (Fall 2026 - Spring 2027)
+    </li>
+    <li>
+      <strong class="text-white font-semibold">EDGE Consortium Scholar</strong> —
+      Dartmouth College (Spring 2026)
+    </li>
+    <li>
+      <strong class="text-white font-semibold"
+        >Hazel Anderson Estate Scholarship</strong
+      > — San Jose State University (Fall 2027)
     </li>
   </ul>
 
   <div class="mb-6">
-    <div class="text-3xl w-full font-bold text-white tracking-tight border-b-2 border-primary/20 pb-2">⏳ Experience</div>
+    <div
+      class="text-3xl w-full font-bold text-white tracking-tight border-b-2 border-primary/20 pb-2"
+    >
+      ⏳ Experience
+    </div>
   </div>
 
   <div class="time-line-container grid gap-4 mb-10">
@@ -73,12 +109,14 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     >
       <ul class="list-disc list-inside space-y-3 text-white/85 leading-relaxed">
         <li class="pl-2">
-          Extensive usage of Synopsys Sentaurus TCAD Suite (SDevice, Structure Editor, SProcess, SVisual, Sentaurus
-          Workbench, Silicon Workbench, Sentaurus Data Explorer).
+          Extensive usage of Synopsys Sentaurus TCAD Suite (SDevice, Structure
+          Editor, SProcess, SVisual, Sentaurus Workbench, Silicon Workbench,
+          Sentaurus Data Explorer).
         </li>
         <li class="pl-2">
-          Characterized and modeled FinFET and Gate-All-Around FET devices and SRAMs under radiation using TCAD
-          simulation (device simulation, process simulation, layout).
+          Characterized and modeled FinFET and Gate-All-Around FET devices and
+          SRAMs under radiation using TCAD simulation (device simulation,
+          process simulation, layout).
         </li>
       </ul>
     </TimeLineElement>
@@ -92,10 +130,12 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
           Programmed and maintained Applied Materials and Mattson etch tools.
         </li>
         <li class="pl-2">
-          Designed and fabricated custom troubleshooting devices and made modifications to tools using KiCAD, CAD tools and 3D printing.
+          Designed and fabricated custom troubleshooting devices and made
+          modifications to tools using KiCAD, CAD tools and 3D printing.
         </li>
         <li class="pl-2">
-          Performed hardware troubleshooting and soldering on electronic, hydraulic, vacuum and cooling subsystems.
+          Performed hardware troubleshooting and soldering on electronic,
+          hydraulic, vacuum and cooling subsystems.
         </li>
       </ul>
     </TimeLineElement>
@@ -106,10 +146,12 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     >
       <ul class="list-disc list-inside space-y-3 text-white/85 leading-relaxed">
         <li class="pl-2">
-          Initiated a joint effort between LLNL & SJSU on response of a cable in a metal cavity under X-ray irradiation.
+          Initiated a joint effort between LLNL & SJSU on response of a cable in
+          a metal cavity under X-ray irradiation.
         </li>
         <li class="pl-2">
-          Implemented a QSPICE environment to analyze effects of radiation-induced electromagnetic fields.
+          Implemented a QSPICE environment to analyze effects of
+          radiation-induced electromagnetic fields.
         </li>
       </ul>
     </TimeLineElement>
@@ -120,46 +162,64 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     >
       <ul class="list-disc list-inside space-y-3 text-white/85 leading-relaxed">
         <li class="pl-2">
-          Spearheaded the formation of the engineering team, contributing to revenue growth from <strong class="text-white font-semibold">$10M to $28M</strong> through expansion into advanced low-voltage projects.
+          Spearheaded the formation of the engineering team, contributing to
+          revenue growth from <strong class="text-white font-semibold"
+            >$10M to $28M</strong
+          > through expansion into advanced low-voltage projects.
         </li>
         <li class="pl-2">
-          Engineered and estimated over 200 bids, with large-scale system deployments at <strong class="text-white font-semibold">Tesla Gigafactories</strong> NV & TX.
+          Engineered and estimated over 200 bids, with large-scale system
+          deployments at <strong class="text-white font-semibold"
+            >Tesla Gigafactories</strong
+          > NV & TX.
         </li>
       </ul>
     </TimeLineElement>
   </div>
 
   <div class="mb-6">
-    <div id="projects" class="text-3xl w-full font-bold text-white tracking-tight border-b-2 border-primary/20 pb-2">🚀 Projects</div>
+    <div
+      id="projects"
+      class="text-3xl w-full font-bold text-white tracking-tight border-b-2 border-primary/20 pb-2"
+    >
+      🚀 Projects
+    </div>
   </div>
 
   <div class="time-line-container grid gap-4 mb-10">
     <TimeLineElement
-      title="RFIC Low Noise Amplifier (LNA) Design"
-      subtitle="EE 220 RFIC I Final Project - San Jose State University"
-      date="Dec 2025"
+      title="2.45 GHz CMOS Low-Noise Amplifier Design"
+      subtitle="Cadence Spectre, Keysight ADS"
+      date="December 2025"
     >
       <ul class="list-disc list-inside space-y-3 text-white/85 leading-relaxed">
         <li class="pl-2">
-          Designed and simulated a 2.45 GHz Low Noise Amplifier using Cadence and Keysight Advanced Design System (ADS).
+          Designed and simulated a 2.45 GHz Low Noise Amplifier using Cadence
+          and Keysight Advanced Design System.
         </li>
         <li class="pl-2">
-          Achieved a gain (S<sub>21</sub>) of 16.25 dB and a Noise Figure of 1.25 dB within a 2 mW power constraint.
+          Achieved a gain (S<sub>21</sub>) of 16.25 dB and a Noise Figure of
+          1.25 dB within a 2 mW power constraint.
         </li>
         <li class="pl-2">
-          Implemented a common-source amplifier with inductive source degeneration using <code>nmos1v_nat</code> devices for optimal high-frequency performance.
+          Implemented a common-source amplifier with inductive source
+          degeneration using <code>nmos1v_nat</code> devices for optimal high-frequency
+          performance.
         </li>
         <li class="pl-2">
-          Evaluated and compared lumped and distributed matching networks for optimal return loss and bandwidth.
+          Evaluated and compared lumped and distributed matching networks for
+          optimal return loss and bandwidth.
         </li>
         <li class="pl-2">
-          Skills: RFIC Design, LNA, Cadence, Keysight ADS, Impedance Matching, Circuit Simulation.
+          Skills: RFIC Design, LNA, Cadence, Keysight ADS, Impedance Matching,
+          Circuit Simulation.
         </li>
         <li class="pl-2">
           <a
             href="/LNA_Design_Project_Final_Report.pdf"
             target="_blank"
-            class="btn btn-link hover:text-primary-focus transition-colors text-white/85">View Final Report (PDF)</a
+            class="btn btn-link hover:text-primary-focus transition-colors text-white/85"
+            >View Final Report (PDF)</a
           >
         </li>
       </ul>
@@ -171,25 +231,35 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     >
       <ul class="list-disc list-inside space-y-3 text-white/85 leading-relaxed">
         <li class="pl-2">
-          Overview of efforts in bridging classical and quantum game theory, mapping strategic concepts onto quantum information language.
+          Overview of efforts in bridging classical and quantum game theory,
+          mapping strategic concepts onto quantum information language.
         </li>
         <li class="pl-2">
-          Analyzed how quantum mechanics resolves classical game theory dilemmas through superposition, entanglement, and unitary operations.
+          Analyzed how quantum mechanics resolves classical game theory dilemmas
+          through superposition, entanglement, and unitary operations.
         </li>
         <li class="pl-2">
-          Demonstrated that quantum strategies can dismantle the Prisoner's Dilemma by establishing novel Quantum Nash Equilibria that are Pareto optimal.
+          Demonstrated that quantum strategies can dismantle the Prisoner's
+          Dilemma by establishing novel Quantum Nash Equilibria that are Pareto
+          optimal.
         </li>
         <li class="pl-2">
-          Proved that optimal quantum strategies always yield payoffs greater than or equal to classical strategies: <strong class="text-white font-semibold">π̄<sub>quantum</sub> ≥ π̄<sub>classical</sub></strong>.
+          Proved that optimal quantum strategies always yield payoffs greater
+          than or equal to classical strategies: <strong
+            class="text-white font-semibold"
+            >π̄<sub>quantum</sub> ≥ π̄<sub>classical</sub></strong
+          >.
         </li>
         <li class="pl-2">
-          Skills: Quantum Mechanics, Game Theory, Mathematical Modeling, LaTeX, Research Analysis, Strategic Optimization.
+          Skills: Quantum Mechanics, Game Theory, Mathematical Modeling, LaTeX,
+          Research Analysis, Strategic Optimization.
         </li>
         <li class="pl-2">
           <a
             href="/Quantum_Games.pdf"
             target="_blank"
-            class="btn btn-link hover:text-primary-focus transition-colors text-white/85">View Full Paper</a
+            class="btn btn-link hover:text-primary-focus transition-colors text-white/85"
+            >View Full Paper</a
           >
         </li>
       </ul>
@@ -220,7 +290,8 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
           <a
             href="https://github.com/JVTou/doublependulum"
             target="_blank"
-            class="btn btn-link hover:text-primary-focus transition-colors text-white/85">View GitHub Repository</a
+            class="btn btn-link hover:text-primary-focus transition-colors text-white/85"
+            >View GitHub Repository</a
           >
         </li>
       </ul>
@@ -233,10 +304,12 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     >
       <ul class="list-disc list-inside space-y-3 text-white/85 leading-relaxed">
         <li class="pl-2">
-          Developed an ambient lighting system using an Arduino microcontroller to control digital LEDs for real-time screen backlighting.
+          Developed an ambient lighting system using an Arduino microcontroller
+          to control digital LEDs for real-time screen backlighting.
         </li>
         <li class="pl-2">
-          Used Arduino libraries to process screen color data and drive the LED strips, enhancing user experience.
+          Used Arduino libraries to process screen color data and drive the LED
+          strips, enhancing user experience.
         </li>
       </ul>
     </TimeLineElement>
@@ -272,7 +345,8 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
           <a
             href="/Aerodynamics_Lab_Report.pdf"
             target="_blank"
-            class="btn btn-link hover:text-primary-focus transition-colors text-white/85">View Full Report</a
+            class="btn btn-link hover:text-primary-focus transition-colors text-white/85"
+            >View Full Report</a
           >
         </li>
       </ul>
@@ -308,7 +382,8 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
           <a
             href="/Compton_Effect_Lab_Report.pdf"
             target="_blank"
-            class="btn btn-link hover:text-primary-focus transition-colors text-white/85">View Full Report</a
+            class="btn btn-link hover:text-primary-focus transition-colors text-white/85"
+            >View Full Report</a
           >
         </li>
       </ul>
@@ -339,7 +414,8 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
           <a
             href="/Zeeman_Effect_Lab_Report.pdf"
             target="_blank"
-            class="btn btn-link hover:text-primary-focus transition-colors text-white/85">View Full Report</a
+            class="btn btn-link hover:text-primary-focus transition-colors text-white/85"
+            >View Full Report</a
           >
         </li>
       </ul>
@@ -352,14 +428,20 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     >
       <ul class="list-disc list-inside space-y-3 text-white/85 leading-relaxed">
         <li class="pl-2">
-          Developed full-stack websites for three different construction contractors using Astro, HTML/CSS, and React.
+          Developed full-stack websites for three different construction
+          contractors using Astro, HTML/CSS, and React.
         </li>
-        <li class="pl-2">Integrated APIs such as Google Maps and SendGrid for enhanced functionality.</li>
+        <li class="pl-2">
+          Integrated APIs such as Google Maps and SendGrid for enhanced
+          functionality.
+        </li>
         <li class="pl-2">
           Utilized Git for version control and worked within a Unix Shell
           environment with VS Code.
         </li>
-        <li class="pl-2">Focused on JavaScript in conjunction with APIs and ESM modules.</li>
+        <li class="pl-2">
+          Focused on JavaScript in conjunction with APIs and ESM modules.
+        </li>
         <li class="pl-2">
           Skills: Astro, HTML/CSS, React, JavaScript, API Integration, Git,
           Full-Stack Development, Client Relations.
@@ -369,7 +451,11 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
   </div>
 
   <div class="mb-6">
-    <div class="text-3xl w-full font-bold text-white tracking-tight border-b-2 border-primary/20 pb-2">✨ Hobbies</div>
+    <div
+      class="text-3xl w-full font-bold text-white tracking-tight border-b-2 border-primary/20 pb-2"
+    >
+      ✨ Hobbies
+    </div>
   </div>
 
   <ul class="mx-6 mb-10 grid gap-3">
