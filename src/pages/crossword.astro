@@ -9,12 +9,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   >
     <div class="max-w-[1000px] mx-auto flex flex-col items-center">
       <!-- Header -->
-      <div
-        class="w-full mb-8 text-center sm:text-left sm:flex sm:justify-between sm:items-end border-b border-gray-300 pb-4 px-4"
-      >
-        <h1
-          class="text-4xl font-serif text-black uppercase font-bold tracking-widest pl-4"
-        >
+      <div class="w-full mb-8 text-center sm:text-left sm:flex sm:justify-between sm:items-end border-b border-gray-300 pb-4 px-4">
+        <h1 class="text-4xl font-serif text-black uppercase font-bold tracking-widest pl-4">
           The Mini Crossword
         </h1>
       </div>
@@ -32,27 +28,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </div>
 
           <!-- Buttons -->
-          <div class="mt-6 flex gap-3 w-full justify-center lg:justify-start">
-          </div>
+          <div class="mt-6 flex gap-3 w-full justify-center lg:justify-start"></div>
 
           <!-- Final Easter Egg Message -->
           <div
             id="final-message"
             class="mt-8 text-2xl font-bold text-green-600 opacity-0 transition-opacity duration-700 pointer-events-none text-center lg:text-left w-full tracking-wider"
           >
-            happyeaster2026
+            sophiapwebster
           </div>
         </div>
 
         <!-- Right side: Clues -->
-        <div
-          class="flex-grow flex flex-col sm:flex-row gap-8 lg:gap-12 mt-4 lg:mt-0 w-full pt-2"
-        >
+        <div class="flex-grow flex flex-col sm:flex-row gap-8 lg:gap-12 mt-4 lg:mt-0 w-full pt-2">
           <!-- Across Clues -->
           <div class="flex-1">
-            <h3
-              class="text-xs font-bold mb-2 uppercase border-b border-black pb-1 mb-3"
-            >
+            <h3 class="text-xs font-bold mb-2 uppercase border-b border-black pb-1 mb-3">
               Across
             </h3>
             <ul id="clues-across" class="space-y-1">
@@ -62,9 +53,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
           <!-- Down Clues -->
           <div class="flex-1">
-            <h3
-              class="text-xs font-bold mb-2 uppercase border-b border-black pb-1 mb-3"
-            >
+            <h3 class="text-xs font-bold mb-2 uppercase border-b border-black pb-1 mb-3">
               Down
             </h3>
             <ul id="clues-down" class="space-y-1">
@@ -138,44 +127,43 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <script>
     const answerKey = [
-      ["Q", "U", "A", "S", "I"],
-      ["U", "N", "D", "E", "R"],
-      ["I", "D", "I", "N", "A"],
-      ["T", "I", "E", "D", "#"],
-      ["E", "D", "U", "#", "#"],
+      ["#", "#", "G", "I", "N"],
+      ["A", "W", "A", "K", "E"],
+      ["C", "O", "V", "E", "R"],
+      ["T", "R", "E", "A", "D"],
+      ["S", "N", "L", "#", "#"],
     ];
 
     const cellNumbers = {
-      "0-0": 1,
-      "0-1": 2,
-      "0-2": 3,
-      "0-3": 4,
-      "0-4": 5,
-      "1-0": 6,
-      "2-0": 7,
-      "3-0": 8,
-      "4-0": 9,
+      "0-2": 1,
+      "0-3": 2,
+      "0-4": 3,
+      "1-0": 4,
+      "1-1": 5,
+      "2-0": 6,
+      "3-0": 7,
+      "4-0": 8,
     };
 
     const acrossCluesMap = {
-      1: 'Prefix meaning "similar to"',
-      6: "Down ___ (Australia)",
-      7: 'Menzel of Broadway\'s "Wicked"',
-      8: "Knotted",
-      9: "College URL ending",
+      1: "Spirit in a martini",
+      4: "Not asleep",
+      6: "Insurance ___ (policy protection)",
+      7: "Step on, as stairs",
+      8: "Late-night sketch show, for short",
     };
 
     const downCluesMap = {
-      1: '"Almost, but not ___"',
-      2: "Took apart",
-      3: "French farewell",
-      4: "E-mail action",
-      5: "Lyricist Gershwin",
+      1: "Judge's hammer",
+      2: "Swedish furniture giant",
+      3: "Bookish, socially awkward sort",
+      4: "Theater performance divisions",
+      5: "Threadbare from use",
     };
 
     let direction = "across";
     let activeRow = 0;
-    let activeCol = 0;
+    let activeCol = 2;
     const gridRows = 5;
     const gridCols = 5;
 
@@ -506,7 +494,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       buildGrid();
       buildClues();
       setTimeout(() => {
-        focusCell(0, 0);
+        focusCell(0, 2);
         updateHighlights();
       }, 100);
     });
